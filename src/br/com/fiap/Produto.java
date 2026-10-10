@@ -67,11 +67,11 @@ public class Produto {
     @Override
     public String toString() {
         String status = ativo ? "Ativo" : "Descontinuado";
-        return "Número do Item\t\t:\t" + numeroItem
-                + "\nNome\t\t\t\t:\t" + nome
-                + "\nQuantidade em Estoque\t:\t" + quantidadeEstoque
-                + "\nPreço\t\t\t\t:\tR$ " + String.format(Locale.US, "%.2f", preco)
-                + "\nValor do Estoque\t\t:\tR$ " + String.format(Locale.US, "%.2f", getValorInventario())
-                + "\nStatus do Produto\t\t:\t" + status;
+        return "Número do Item:\t" + numeroItem
+                + "\nNome:\t" + nome
+                + "\nQuantidade em Estoque:\t" + quantidadeEstoque
+                + "\nPreço:\tR$ " + String.format(Locale.US, "%.2f", preco)
+                + "\nValor do Estoque:\tR$ " + String.format(Locale.US, "%.2f", getValorInventario())
+                + "\nStatus do Produto:\t" + status;
     }
 }
