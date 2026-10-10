@@ -16,8 +16,7 @@ public class ProductTester {
         int maxSize;
 
         do {
-            System.out.println("Insira o número de produtos que gostaria de adicionar:");
-            System.out.println("Insira \"0\" (zero) se não quiser adicionar mais produtos:");
+            System.out.print("Insira o número de produtos que gostaria de adicionar (quando não quiser mais adicionar digite \"0\" (zero)): ");
             maxSize = in.nextInt();
 
             if (maxSize < 0) {
@@ -71,6 +70,34 @@ public class ProductTester {
         System.out.println();
         System.out.println(p6);
 
+        System.out.println();
+        if (maxSize == 0) {
+            System.out.println("Não há produtos!!");
+        } else {
+            Produto[] produtos = new Produto[maxSize];
+
+            for (int i = 0; i < maxSize; i++) {
+                in.nextLine();
+
+                System.out.println("--- Cadastro do produto adicional " + (i + 1) + " de " + maxSize + " ---");
+                System.out.print("Nome: ");
+                tempName = in.nextLine();
+                System.out.print("Quantidade em estoque: ");
+                tempQty = in.nextInt();
+                System.out.print("Preço: ");
+                tempPrice = Double.parseDouble(in.next().replace(",", "."));
+                System.out.print("Número do item: ");
+                tempNumber = in.nextInt();
+
+                produtos[i] = new Produto(tempNumber, tempName, tempQty, tempPrice);
+            }
+            System.out.println();
+            System.out.println("=== Produtos Adicionados ===");
+            for (Produto produto : produtos) {
+                System.out.println(produto);
+                System.out.println();
+            }
+        }
         in.close();
     }
 }
