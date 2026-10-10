@@ -42,6 +42,7 @@ public class ProductTester {
         Produto p4 = new Produto(4, "Apple Watch Series 10", 30, 4399.90);
         Produto p5 = new Produto(5, "AirPods Pro 3", 60, 1997.90);
         Produto p6 = new Produto(6, "Apple Pencil Pro", 50, 1449.90);
+        p1.setAtivo(false);
 
         System.out.println();
         System.out.println("--- Produtos do inventário ---");
