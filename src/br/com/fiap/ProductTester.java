@@ -13,6 +13,19 @@ public class ProductTester {
         int tempQty;
         double tempPrice;
 
+        int maxSize;
+
+        do {
+            System.out.println("Insira o número de produtos que gostaria de adicionar:");
+            System.out.println("Insira \"0\" (zero) se não quiser adicionar mais produtos:");
+            maxSize = in.nextInt();
+
+            if (maxSize < 0) {
+                System.out.println("Valor incorreto inserido");
+            }
+        } while (maxSize < 0);
+        in.nextLine();
+
         System.out.println("=== CADASTRO DO PRODUTO 1 ===");
         System.out.print("Nome: ");
         tempName = in.nextLine();
