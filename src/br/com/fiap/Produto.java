@@ -8,6 +8,7 @@ public class Produto {
     private String nome;
     private int quantidadeEstoque;
     private double preco;
+    private boolean ativo = true;
 
     public Produto() {
     }
@@ -51,11 +52,26 @@ public class Produto {
         this.preco = preco;
     }
 
+    public boolean isAtivo() {
+        return ativo;
+    }
+
+    public void setAtivo(boolean ativo) {
+        this.ativo = ativo;
+    }
+
+    public double getValorInventario() {
+        return preco * quantidadeEstoque;
+    }
+
     @Override
     public String toString() {
-        return "Número do Item: " + numeroItem
-                + "\nNome: " + nome
-                + "\nQuantidade em Estoque: " + quantidadeEstoque
-                + "\nPreço: R$" + String.format(Locale.US, "%.2f", preco);
+        String status = ativo ? "Ativo" : "Descontinuado";
+        return "Número do Item\t\t:\t" + numeroItem
+                + "\nNome\t\t\t\t:\t" + nome
+                + "\nQuantidade em Estoque\t:\t" + quantidadeEstoque
+                + "\nPreço\t\t\t\t:\tR$ " + String.format(Locale.US, "%.2f", preco)
+                + "\nValor do Estoque\t\t:\tR$ " + String.format(Locale.US, "%.2f", getValorInventario())
+                + "\nStatus do Produto\t\t:\t" + status;
     }
 }
